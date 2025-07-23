@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chitra Gautam | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    nav {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links li a, .nav-links button {
+      color: white;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    header.hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background-color: #e0f7fa;
+    }
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    .skills-grid, .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+    .skill {
+      background-color: #81d4fa;
+      padding: 1rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+    .project {
+      margin-bottom: 2rem;
+    }
+    .project img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: block;
+    }
+    .testimonial-slider blockquote {
+      font-style: italic;
+      margin: 1rem 0;
+    }
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #00796b;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: #25d366;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-align: center;
+      text-decoration: none;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .social-links a {
+      margin: 0 0.5rem;
+      color: white;
+      text-decoration: none;
+    }
+    #loader-wrapper {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #loader {
+      border: 6px solid #ccc;
+      border-top: 6px solid #00796b;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+    .dark-mode nav, .dark-mode footer {
+      background-color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+  </div>
+
+  <nav id="navbar">
+    <div class="logo">Chitra </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button></li>
+    </ul>
+  </nav>
+
+<header class="hero">
+  <h1>I’m Chitra Gautam</h1>
+  <p>Developer</p>
+  <button class="btn" onclick="downloadResume()">📄 Download Resume</button>
+</header>
+
+<script>
+  function downloadResume() {
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1hYzItGa7PAx2jDccfYQjjdWddfKPVzOC";
+    const link = document.createElement("a");
+    link.href = resumeUrl;
+    link.download = "Chitra_Gautam_Resume.pdf"; // Optional: set desired filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+</script>
+
+<!-- JS code -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a passionate developement and learning new technologies.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">💻 Web Dev</div>
+      <div class="skill">📊 Data Analytics</div>
+      <div class="skill">🎥 Video Editing</div>
+      <div class="skill">🤖 AI Projects</div>
+      <div class="skill">🧠 Psychology Research</div>
+      <div class="skill">📱 Content Creation</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+    <h3>Temperature Converter</h3>
+    <p>A real-time Temperature Converter built using HTML, CSS, and JavaScript. It instantly converts values between Celsius, Fahrenheit, and Kelvin as you type. Features a responsive design and user-friendly interface.</p>
+    <a href="https://github.com/greatchitra/Temperature-Converter-" class="btn" target="_blank">View Project</a>
+  </div>
+
+  <div class="project">
+    <h3>Netflix Clone</h3>
+    <p>A responsive Netflix Clone built with HTML, CSS, and JavaScript, replicating the Netflix homepage UI. Includes dynamic layout, hover effects, and clean design to mimic the real platform's experience.</p>
+    <a href="https://github.com/greatchitra/Netflix" class="btn" target="_blank">View Project</a>
+  </div>
+
+  
+  </section>
+
+  
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-slider">
+      <blockquote>"I am consistent about my work."</blockquote>
+      <blockquote>"A brilliant mind with a kind heart and great vision."</blockquote>
+      <blockquote>"Hardworking, strategic and always creative!"</blockquote>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mvgalaeb" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/9335540370" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+  <footer>
+    <p>© 2025 Chitra</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/chitra-gautam-718765258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+      <a href="https://github.com/greatchitra/greatchitra/tree/main">GitHub</a>
+      <a href="https://www.linkedin.com/in/chitra-gautam-718765258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+      <a href="https://github.com/greatchitra/greatchitra/tree/main">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader-wrapper").style.display = "none";
+    });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+</html>
